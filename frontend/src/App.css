@@ -59,12 +59,12 @@ body {
 }
 
 .ruler-numbers {
-  max-width: 850px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 70px;
+  padding: 0 100px;
 }
 
 .ruler-number {
@@ -75,11 +75,11 @@ body {
 
 /* Document Page */
 .document-page {
-  max-width: 850px;
+  max-width: 1200px;
   margin: 0 auto;
   background-color: white;
   min-height: calc(100vh - 50px);
-  padding: 50px 70px;
+  padding: 50px 100px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
 }
 
