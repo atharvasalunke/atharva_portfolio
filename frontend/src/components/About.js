@@ -44,8 +44,12 @@ const About = () => {
             <div className="about-main">
               <div className="about-photo-section">
                 <div className="profile-photo">
-                  <div className="photo-placeholder">
-                    <span className="photo-icon">👨‍💻</span>
+                  <div className="photo-container">
+                    <img 
+                      src={mockData.personal.photo} 
+                      alt={mockData.personal.name}
+                      className="profile-img"
+                    />
                   </div>
                   <div className="photo-info">
                     <h3>{mockData.personal.name}</h3>
