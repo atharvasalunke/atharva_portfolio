@@ -626,8 +626,17 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .portfolio-container {
+    max-width: 100%;
+  }
+  
   .document-page {
-    padding: 20px 30px;
+    padding: 30px 40px;
+    margin: 0 10px;
+  }
+  
+  .ruler-numbers {
+    padding: 0 40px;
   }
   
   .document-header {
@@ -653,6 +662,12 @@ body {
     text-align: center;
   }
   
+  .profile-photo {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  
   .skill-category {
     grid-template-columns: 1fr;
     gap: 8px;
@@ -662,5 +677,15 @@ body {
     flex-direction: column;
     gap: 20px;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .document-page {
+    padding: 20px 30px;
+  }
+  
+  .ruler-numbers {
+    padding: 0 30px;
   }
 }
