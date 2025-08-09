@@ -12,8 +12,56 @@ export const mockData = {
     heroDescription: "With experience spanning machine learning, data engineering, and full-stack development, I specialize in building scalable AI solutions and robust data pipelines that drive business value.",
     aboutDescription: "I'm a passionate Data and ML Engineer currently pursuing my Master's in Computer Engineering at Virginia Tech. With a strong background in machine learning, data engineering, and cloud platforms, I love solving complex problems and building systems that make a real impact. My experience spans from optimizing LLM-based systems at Zof AI to designing real-time ETL pipelines at Citibank through LTIMindtree."
   },
-  
-  projects: [
+  workExperience: [
+    {
+      company: "Zof AI Inc.",
+      position: "Machine Learning Intern",
+      location: "San Francisco, CA",
+      period: "June 2025 - Aug 2025",
+      description: "Reduced LLM-based test generation latency by 60% by engineering a Python-based asynchronous FastAPI microservice with optimized data structures and OOP design.",
+      highlights: [
+        "Automated 80% of compliance workflows using LangGraph + Semantic Kernel multi-agent orchestration",
+        "Increased debugging efficiency by 40% with Prisma-backed Supabase schema",
+        "Built secure CI/CD pipeline in Azure Pipelines for containerized services"
+      ]
+    },
+    {
+      company: "Virginia Tech",
+      position: "Graduate Research Assistant",
+      location: "Blacksburg, VA",
+      period: "Aug 2024 - May 2025",
+      description: "Delivered a cloud-native backend decision platform for real-time yield forecasting using time series forecasting and generalized linear regression.",
+      highlights: [
+        "Integrated on-prem LLaMA 3 chatbot with plant disease classifier",
+        "Reduced manual triage time by 70% using unsupervised learning",
+        "Partnered with cross-functional teams in Engineering, Agriculture, and Product"
+      ]
+    },
+    {
+      company: "LTIMindtree (Citibank)",
+      position: "Data Engineer II",
+      location: "Mumbai, India",
+      period: "Oct 2021 - Jul 2024",
+      description: "Designed and maintained real-time and batch ETL pipelines enabling downstream fraud detection models using regression trees and classification trees.",
+      highlights: [
+        "Improved pipeline efficiency by 40% via performance optimization techniques",
+        "Led cross-team root cause analysis cutting incident resolution time by 50%",
+        "Worked with Scala, Python, Kafka, Hive, and Apache Spark on Azure Databricks"
+      ]
+    },
+    {
+      company: "LTIMindtree (Citibank)",
+      position: "Software Development Engineer",
+      location: "Mumbai, India",
+      period: "Jun 2021 - Oct 2021",
+      description: "Scaled distributed data warehouse capacity by 10x by developing fault-tolerant Apache Spark + Kafka ETL pipeline.",
+      highlights: [
+        "Reduced reconciliation report runtime from 2 hours to under 10 minutes",
+        "Automated batch workflows with Shell scripting, SQL, and Autosys",
+        "Enhanced compliance reporting speed for analytics teams"
+      ]
+    }
+  ],
     {
       title: "AI-Driven Traffic Management",
       category: "Machine Learning, Full-Stack",
