@@ -124,13 +124,18 @@ body {
   color: #666;
   font-size: 14px;
   font-weight: 400;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
   position: relative;
+  padding: 4px 0;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: #1a1a1a;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
 }
 
 .email-link {
