@@ -720,6 +720,31 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .document-page {
+    padding: 40px 60px;
+  }
+  
+  .ruler-numbers {
+    padding: 0 60px;
+  }
+  
+  .hero-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .hero-image {
+    order: -1;
+  }
+  
+  .projects-grid,
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .portfolio-container {
     max-width: 100%;
@@ -748,7 +773,13 @@ body {
     font-size: 28px;
   }
   
-  .projects-grid {
+  .hero-photo {
+    width: 140px;
+    height: 180px;
+  }
+  
+  .projects-grid,
+  .projects-list {
     grid-template-columns: 1fr;
   }
   
