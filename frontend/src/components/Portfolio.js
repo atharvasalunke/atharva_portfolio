@@ -34,21 +34,33 @@ const Portfolio = () => {
         {/* Hero Section */}
         <section className="hero-section">
           <div className="hero-content">
-            <h2 className="hero-title">{mockData.personal.heroTitle}</h2>
-            <p className="hero-description">{mockData.personal.heroDescription}</p>
-            
-            <div className="social-links">
-              <span className="connect-text">Connect with me here:</span>
-              <div className="social-icons">
-                <a href={mockData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon">
-                  <Linkedin size={20} />
-                </a>
-                <a href={mockData.personal.github} target="_blank" rel="noopener noreferrer" className="social-icon">
-                  <Github size={20} />
-                </a>
-                <a href={`mailto:${mockData.personal.email}`} className="social-icon">
-                  <Mail size={20} />
-                </a>
+            <div className="hero-main">
+              <div className="hero-text">
+                <h2 className="hero-title">{mockData.personal.heroTitle}</h2>
+                <p className="hero-description">{mockData.personal.heroDescription}</p>
+                
+                <div className="social-links">
+                  <span className="connect-text">Connect with me here:</span>
+                  <div className="social-icons">
+                    <a href={mockData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon">
+                      <Linkedin size={20} />
+                    </a>
+                    <a href={mockData.personal.github} target="_blank" rel="noopener noreferrer" className="social-icon">
+                      <Github size={20} />
+                    </a>
+                    <a href={`mailto:${mockData.personal.email}`} className="social-icon">
+                      <Mail size={20} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="hero-image">
+                <img 
+                  src={mockData.personal.photo} 
+                  alt={mockData.personal.name}
+                  className="hero-photo"
+                />
               </div>
             </div>
           </div>
