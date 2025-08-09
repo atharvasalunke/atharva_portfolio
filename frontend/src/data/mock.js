@@ -7,6 +7,7 @@ export const mockData = {
     phone: "+1 540-934-8370",
     linkedin: "https://www.linkedin.com/in/atharva-salunke/",
     github: "https://github.com/atharvasalunke",
+    photo: "https://customer-assets.emergentagent.com/job_msfolio/artifacts/gp5qnnji_WhatsApp%20Image%202025-04-13%20at%2013.54.48.jpeg",
     heroTitle: "Hey there! I'm Atharva and I'm a Data and ML Engineer from Virginia.",
     heroDescription: "With experience spanning machine learning, data engineering, and full-stack development, I specialize in building scalable AI solutions and robust data pipelines that drive business value.",
     aboutDescription: "I'm a passionate Data and ML Engineer currently pursuing my Master's in Computer Engineering at Virginia Tech. With a strong background in machine learning, data engineering, and cloud platforms, I love solving complex problems and building systems that make a real impact. My experience spans from optimizing LLM-based systems at Zof AI to designing real-time ETL pipelines at Citibank through LTIMindtree."
@@ -17,6 +18,7 @@ export const mockData = {
       title: "AI-Driven Traffic Management",
       category: "Machine Learning, Full-Stack",
       description: "Real-time traffic optimization system using computer vision",
+      image: "https://images.unsplash.com/photo-1511363814364-47316c275e25?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHw0fHx0cmFmZmljJTIwbWFuYWdlbWVudCUyMEFJfGVufDB8fHx8MTc1NDc4MDI3OHww&ixlib=rb-4.1.0&q=85",
       fullDescription: "Built a full-stack YOLOv8 (PyTorch) traffic control platform with Flask backend and Angular frontend, applying recommender system logic to dynamically prioritize routes, reducing simulated congestion by 35%. The system uses real-time computer vision to analyze traffic patterns and optimize signal timing.",
       technologies: ["Python", "PyTorch", "YOLOv8", "Flask", "Angular", "Computer Vision"]
     },
@@ -24,6 +26,7 @@ export const mockData = {
       title: "Credit Card Fraud Detection",
       category: "Data Engineering, ML",
       description: "Cloud-native ETL pipeline with fraud detection capabilities",
+      image: "https://images.unsplash.com/photo-1667984390538-3dea7a3fe33d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHw2fHxjbG91ZCUyMGNvbXB1dGluZ3xlbnwwfHx8fDE3NTQ3ODAzMDN8MA&ixlib=rb-4.1.0&q=85",
       fullDescription: "Developed a comprehensive cloud-native ETL pipeline in Azure Data Factory with fraud detection using PCA + Random Forest achieving 94% recall. Integrated classification trees and unsupervised learning to identify high-risk transaction clusters in real-time, processing millions of transactions daily.",
       technologies: ["Python", "Azure Data Factory", "Random Forest", "PCA", "SQL", "Apache Spark"]
     }
