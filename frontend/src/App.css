@@ -74,11 +74,11 @@ body {
 
 /* Document Page */
 .document-page {
-  max-width: 900px;
+  max-width: 850px;
   margin: 0 auto;
   background-color: white;
   min-height: calc(100vh - 50px);
-  padding: 50px 80px;
+  padding: 50px 70px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
 }
 
