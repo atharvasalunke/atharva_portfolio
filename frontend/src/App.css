@@ -47,12 +47,12 @@ body {
 
 /* Document Page */
 .document-page {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   background-color: white;
   min-height: calc(100vh - 50px);
-  padding: 40px 60px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 50px 80px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
 }
 
 /* Header */
