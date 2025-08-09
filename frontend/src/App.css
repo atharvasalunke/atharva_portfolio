@@ -160,6 +160,17 @@ body {
   margin-bottom: 80px;
 }
 
+.hero-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.hero-text {
+  max-width: 100%;
+}
+
 .hero-title {
   font-size: 36px;
   font-weight: 600;
@@ -177,6 +188,25 @@ body {
   margin-bottom: 36px;
   max-width: 600px;
   font-weight: 400;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-photo {
+  width: 180px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.hero-photo:hover {
+  transform: translateY(-4px);
 }
 
 .social-links {
