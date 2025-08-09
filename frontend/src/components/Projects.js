@@ -41,9 +41,11 @@ const Projects = () => {
             {mockData.projects.map((project, index) => (
               <div key={index} className="project-detail-card">
                 <div className="project-detail-image">
-                  <div className="project-placeholder large">
-                    <span className="project-icon">🚀</span>
-                  </div>
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="project-detail-img"
+                  />
                 </div>
                 <div className="project-detail-content">
                   <div className="project-detail-header">
