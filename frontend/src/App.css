@@ -348,25 +348,25 @@ body {
 
 .services-grid {
   display: grid;
-  gap: 40px;
+  gap: 32px;
   margin-top: 32px;
 }
 
 .service-item {
-  max-width: 700px;
-  padding: 20px 0;
+  max-width: 100%;
+  padding: 0;
   transition: all 0.3s ease;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .service-item:hover {
-  transform: translateX(8px);
-  background-color: #fafafa;
-  padding: 20px 24px;
+  transform: none;
+  background-color: transparent;
+  padding: 0;
 }
 
 .service-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 12px;
@@ -374,13 +374,14 @@ body {
 }
 
 .service-item:hover .service-title {
-  color: #333;
+  color: #1a1a1a;
 }
 
 .service-description {
   font-size: 15px;
   color: #666;
   line-height: 1.6;
+  max-width: 600px;
 }
 
 /* Footer */
