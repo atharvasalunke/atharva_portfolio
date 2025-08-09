@@ -41,8 +41,22 @@ const About = () => {
           </div>
 
           <div className="about-content">
-            <div className="about-story">
-              <p className="about-description">{mockData.personal.aboutDescription}</p>
+            <div className="about-main">
+              <div className="about-photo-section">
+                <div className="profile-photo">
+                  <div className="photo-placeholder">
+                    <span className="photo-icon">👨‍💻</span>
+                  </div>
+                  <div className="photo-info">
+                    <h3>{mockData.personal.name}</h3>
+                    <p>{mockData.personal.title}</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="about-story">
+                <p className="about-description">{mockData.personal.aboutDescription}</p>
+              </div>
             </div>
 
             <div className="about-section">
