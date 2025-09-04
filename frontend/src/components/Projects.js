@@ -1,15 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { mockData } from "../data/mock";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 
 const Projects = () => {
+  const [emailCopied, setEmailCopied] = useState(false);
+  const [emailHovered, setEmailHovered] = useState(false);
+
+  const copyEmailToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(mockData.personal.email);
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy email: ', err);
+    }
+  };
+
+  const getEmailButtonText = () => {
+    if (emailCopied) return 'Copied!';
+    if (emailHovered) return 'Click to copy';
+    return mockData.personal.email;
+  };
   return (
     <div className="portfolio-container">
+      {/* Vertical Ruler */}
+      <div className="vertical-ruler">
+        <div className="vertical-ruler-numbers">
+          {Array.from({ length: 10 }, (_, i) => (
+            <span key={i} className="vertical-ruler-number">{i + 1}</span>
+          ))}
+          {/* Intermediate tick marks */}
+          {Array.from({ length: 9 }, (_, i) => (
+            <span key={`vtick-${i}`} className="vertical-intermediate-tick" style={{ top: `${5 + i * 10}%` }}></span>
+          ))}
+        </div>
+      </div>
+
+      {/* Horizontal Ruler */}
       <div className="document-ruler">
         <div className="ruler-numbers">
-          {Array.from({ length: 25 }, (_, i) => (
+          {Array.from({ length: 16 }, (_, i) => (
             <span key={i} className="ruler-number">{i + 1}</span>
+          ))}
+          {/* Intermediate tick marks */}
+          {Array.from({ length: 15 }, (_, i) => (
+            <span key={`tick-${i}`} className="intermediate-tick" style={{ left: `${3.125 + i * 6.25}%` }}></span>
           ))}
         </div>
       </div>
@@ -25,9 +61,15 @@ const Projects = () => {
           <nav className="header-nav">
             <Link to="/projects" className="nav-link active">Projects</Link>
             <Link to="/about" className="nav-link">About me</Link>
-            <a href={`mailto:${mockData.personal.email}`} className="nav-link email-link">
-              {mockData.personal.email}
-            </a>
+            <button 
+              onClick={copyEmailToClipboard} 
+              onMouseEnter={() => setEmailHovered(true)}
+              onMouseLeave={() => setEmailHovered(false)}
+              className="nav-link email-link copy-email-btn"
+              title="Click to copy email"
+            >
+              {getEmailButtonText()}
+            </button>
           </nav>
         </header>
 

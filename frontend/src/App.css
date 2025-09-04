@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   background-color: #f8f9fa;
   color: #1a1a1a;
   line-height: 1.6;
@@ -42,45 +42,289 @@ body {
 
 /* Portfolio Container */
 .portfolio-container {
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
-  background-color: #f8f9fa;
+  background-color: #e9ecef;
   min-height: 100vh;
+  position: relative;
+  padding-top: 24px;
 }
 
-/* Document Ruler */
-.document-ruler {
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 8px 0;
-  position: sticky;
+/* Window Controls */
+.window-controls {
+  position: fixed;
   top: 0;
-  z-index: 100;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
 }
+
+.window-control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  border: 1px solid #dee2e6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.window-control:hover {
+  background-color: #adb5bd;
+}
+
+/* Horizontal Ruler */
+.document-ruler {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  padding: 6px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  height: 24px;
+}
+
+.document-ruler::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #6c757d;
+}
+
+
+
+
 
 .ruler-numbers {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
+  height: 100%;
   padding: 0 100px;
 }
 
 .ruler-number {
-  font-size: 10px;
-  color: #999;
-  font-weight: 400;
+  position: absolute;
+  font-size: 8px;
+  color: #212529;
+  font-weight: 500;
+  font-family: 'Segoe UI', sans-serif;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
+/* Create tick marks for each number */
+.ruler-number::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 1px;
+  height: 6px;
+  background-color: #495057;
+  transform: translateX(-50%);
+}
+
+/* Add dots between tick marks */
+.ruler-number::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 1px;
+  height: 2px;
+  background-color: #6c757d;
+  transform: translateX(-50%);
+}
+
+/* Intermediate tick marks between numbers */
+.intermediate-tick {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 6px;
+  background-color: #6c757d;
+}
+
+/* Dots between intermediate tick marks */
+.intermediate-tick::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 2px;
+  background-color: #6c757d;
+}
+
+/* Add additional tick marks between numbers for more detail */
+.ruler-number:nth-child(odd)::after {
+  height: 2px;
+  background-color: #6c757d;
+}
+
+
+
+/* Longer tick marks for every 5th number */
+.ruler-number:nth-child(5n)::before {
+  height: 8px;
+  background-color: #212529;
+}
+
+/* Even longer tick marks for every 10th number */
+.ruler-number:nth-child(10n)::before {
+  height: 10px;
+  background-color: #000000;
+}
+
+/* Position numbers at equal intervals */
+.ruler-number:nth-child(1) { left: 5%; }
+.ruler-number:nth-child(2) { left: 10%; }
+.ruler-number:nth-child(3) { left: 15%; }
+.ruler-number:nth-child(4) { left: 20%; }
+.ruler-number:nth-child(5) { left: 25%; }
+.ruler-number:nth-child(6) { left: 30%; }
+.ruler-number:nth-child(7) { left: 35%; }
+.ruler-number:nth-child(8) { left: 40%; }
+.ruler-number:nth-child(9) { left: 45%; }
+.ruler-number:nth-child(10) { left: 50%; }
+.ruler-number:nth-child(11) { left: 55%; }
+.ruler-number:nth-child(12) { left: 60%; }
+.ruler-number:nth-child(13) { left: 65%; }
+.ruler-number:nth-child(14) { left: 70%; }
+.ruler-number:nth-child(15) { left: 75%; }
+.ruler-number:nth-child(16) { left: 80%; }
+.ruler-number:nth-child(17) { left: 85%; }
+.ruler-number:nth-child(18) { left: 90%; }
+.ruler-number:nth-child(19) { left: 95%; }
+.ruler-number:nth-child(20) { left: 100%; }
+
+/* Vertical Ruler */
+.vertical-ruler {
+  width: 24px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 99;
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.05);
+}
+
+
+
+.vertical-ruler::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    #dee2e6 20%, 
+    #dee2e6 80%, 
+    transparent 100%);
+}
+
+.vertical-ruler-numbers {
+  position: relative;
+  height: 100%;
+  padding-top: 60px;
+}
+
+.vertical-ruler-number {
+  position: absolute;
+  font-size: 8px;
+  color: #212529;
+  font-weight: 500;
+  font-family: 'Segoe UI', sans-serif;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+/* Create tick marks for each number */
+.vertical-ruler-number::before {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  width: 8px;
+  height: 1px;
+  background-color: #000000;
+  transform: translateY(-50%);
+}
+
+/* Longer tick marks for every 5th number */
+.vertical-ruler-number:nth-child(5n)::before {
+  width: 12px;
+  background-color: #000000;
+}
+
+/* Even longer tick marks for every 10th number */
+.vertical-ruler-number:nth-child(10n)::before {
+  width: 16px;
+  background-color: #000000;
+}
+
+/* Vertical intermediate tick marks */
+.vertical-intermediate-tick {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  width: 6px;
+  height: 1px;
+  background-color: #6c757d;
+}
+
+/* Dots between vertical intermediate tick marks */
+.vertical-intermediate-tick::after {
+  content: '';
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 2px;
+  height: 1px;
+  background-color: #6c757d;
+}
+
+/* Position numbers at equal intervals */
+.vertical-ruler-number:nth-child(1) { top: 0%; }
+.vertical-ruler-number:nth-child(2) { top: 10%; }
+.vertical-ruler-number:nth-child(3) { top: 20%; }
+.vertical-ruler-number:nth-child(4) { top: 30%; }
+.vertical-ruler-number:nth-child(5) { top: 40%; }
+.vertical-ruler-number:nth-child(6) { top: 50%; }
+.vertical-ruler-number:nth-child(7) { top: 60%; }
+.vertical-ruler-number:nth-child(8) { top: 70%; }
+.vertical-ruler-number:nth-child(9) { top: 80%; }
+.vertical-ruler-number:nth-child(10) { top: 90%; }
 
 /* Document Page */
 .document-page {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 40px auto 0 auto;
   background-color: white;
-  min-height: calc(100vh - 50px);
-  padding: 50px 100px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  min-height: calc(100vh - 40px);
+  padding: 50px 120px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  border-radius: 0;
 }
 
 /* Header */
@@ -88,16 +332,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 60px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 80px;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .header-name h1 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #1a1a1a;
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .back-link {
@@ -120,17 +364,19 @@ body {
   display: flex;
   gap: 32px;
   align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .nav-link {
   text-decoration: none;
-  color: #666;
-  font-size: 14px;
+  color: #999;
+  font-size: 15px;
   font-weight: 400;
   transition: all 0.3s ease;
   position: relative;
   padding: 4px 0;
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .nav-link:hover,
@@ -146,13 +392,29 @@ body {
   background-color: #f5f5f5;
   padding: 8px 16px;
   border-radius: 6px;
-  font-size: 13px;
-  transition: all 0.3s ease;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  color: #1a1a1a;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  width: 250px;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .email-link:hover {
-  background-color: #e9e9e9;
-  transform: translateY(-1px);
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.copy-email-btn {
+  position: relative;
 }
 
 /* Hero Section */
@@ -162,51 +424,56 @@ body {
 
 .hero-main {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   gap: 60px;
   align-items: start;
 }
 
-.hero-text {
-  max-width: 100%;
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .hero-title {
-  font-size: 36px;
+  font-size: 42px;
   font-weight: 600;
   color: #1a1a1a;
   line-height: 1.2;
   margin-bottom: 20px;
   max-width: 700px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .hero-description {
-  font-size: 16px;
-  color: #666;
+  font-size: 18px;
+  color: #4a4a4a;
   line-height: 1.6;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
   max-width: 600px;
   font-weight: 400;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .hero-image {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
+  padding-top: 20px;
+  padding-left: 0;
 }
 
 .hero-photo {
-  width: 180px;
-  height: 240px;
+  width: 380px; /* Increased for bigger size */
+  height: 360px; /*Made square instead of vertical */
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
 }
 
 .hero-photo:hover {
-  transform: translateY(-4px);
+  transform: scale(1.05);
 }
 
 .social-links {
@@ -229,21 +496,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border: 1px solid #e0e0e0;
-  border-radius: 4px;
+  border-radius: 6px;
   color: #666;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #f5f5f5;
 }
 
 .social-icon:hover {
-  background-color: #f5f5f5;
+  background-color: #e9e9e9;
   border-color: #ccc;
   color: #1a1a1a;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Featured Work */
@@ -259,9 +527,10 @@ body {
 }
 
 .section-title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   color: #1a1a1a;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .view-all-link {
@@ -282,19 +551,20 @@ body {
 }
 
 .project-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   animation: fadeInUp 0.6s ease-out;
   animation-fill-mode: both;
   background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .project-card:hover {
-  border-color: #ccc;
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  border-color: #adb5bd;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .project-image {
@@ -327,14 +597,15 @@ body {
   font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 6px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .project-category {
   font-size: 14px;
-  color: #666;
+  color: #4a4a4a;
   margin-bottom: 16px;
-  font-weight: 400;
+  font-weight: 500;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .project-link {
@@ -367,28 +638,267 @@ body {
   color: #666;
 }
 
-/* Services Section */
-.services-section {
-  margin-bottom: 80px;
+/* Experience Timeline */
+.experience-timeline {
+  margin-bottom: 60px;
 }
 
-.services-grid {
-  display: grid;
-  gap: 32px;
-  margin-top: 32px;
+.timeline {
+  margin-top: 24px;
+}
+
+.timeline-item {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline-content {
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: 100%;
+  box-shadow: none;
+  transition: none;
+  backdrop-filter: none;
+}
+
+.timeline-content::before {
+  display: none;
+}
+
+.timeline-content:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.timeline-marker {
+  display: none;
+}
+
+.timeline-content {
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 20px;
+  width: 42%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  backdrop-filter: blur(8px);
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+  right: -16px;
+  border-left-color: #ffffff;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+  left: -16px;
+  border-right-color: #ffffff;
+}
+
+.timeline-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: #d0d0d0;
+}
+
+.timeline-item:hover .timeline-marker {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.experience-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.job-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  font-size: 14px;
+}
+
+.company-name {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.experience-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.icon {
+  color: #999;
+  flex-shrink: 0;
+}
+
+.experience-summary {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Skills Section */
+.skills-section {
+  margin-bottom: 60px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.skill-category {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.skill-category:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.skill-category-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 6px 0;
+}
+
+.skill-list {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Education Section */
+.education-section {
+  margin-bottom: 60px;
+}
+
+.education-item {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  transition: none;
+}
+
+.education-item:hover {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.education-degree {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.education-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.education-school {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.education-period,
+.education-gpa {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Services Section */
+.services-section {
+  margin-bottom: 60px;
+}
+
+.services-list {
+  margin-top: 24px;
 }
 
 .service-item {
-  max-width: 100%;
-  padding: 0;
-  transition: all 0.3s ease;
-  border-radius: 0;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-.service-item:hover {
-  transform: none;
-  background-color: transparent;
-  padding: 0;
+.service-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .service-title {
@@ -396,18 +906,14 @@ body {
   font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 12px;
-  transition: color 0.3s ease;
-}
-
-.service-item:hover .service-title {
-  color: #1a1a1a;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .service-description {
   font-size: 15px;
-  color: #666;
+  color: #4a4a4a;
   line-height: 1.6;
-  max-width: 600px;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Footer */
@@ -580,61 +1086,94 @@ body {
   margin-top: 32px;
 }
 
-.about-main {
-  margin-bottom: 40px;
+/* About Intro Section */
+.about-intro {
+  margin-bottom: 24px;
+  padding: 0;
 }
 
-.about-photo-section {
-  margin-bottom: 32px;
-  padding: 24px;
-  background-color: #fafafa;
-  border-radius: 8px;
-  border: 1px solid #f0f0f0;
+.about-intro-content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
-.profile-photo {
+.about-intro-text {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.photo-placeholder {
-  width: 80px;
-  height: 80px;
-  background-color: #e9e9e9;
-  border-radius: 50%;
+.about-intro-image {
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 32px;
-  flex-shrink: 0;
+  align-items: flex-start;
+  padding-top: 0;
 }
 
-.photo-container {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+.about-hero-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin: 0;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.about-hero-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #666;
+  margin: 0;
+  line-height: 1.3;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.about-hero-hokie {
+  font-size: 16px;
+  color: #cc4d00;
+  font-weight: 600;
+  margin: 0;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.about-hero-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 500px;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.about-hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 0;
+}
+
+.about-photo-container {
+  position: relative;
+  width: 280px;
+  height: 360px;
+  border-radius: 12px;
   overflow: hidden;
-  flex-shrink: 0;
-  border: 2px solid #f0f0f0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-img {
+.about-photo-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.about-hero-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.photo-info h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 4px;
-}
-
-.photo-info p {
-  font-size: 14px;
-  color: #666;
+  object-position: center;
 }
 
 .about-story {
@@ -662,6 +1201,62 @@ body {
   margin-bottom: 16px;
 }
 
+/* Experience Section */
+.experience-list {
+  margin-top: 20px;
+}
+
+.experience-item {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.experience-header {
+  margin-bottom: 12px;
+}
+
+.job-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.experience-meta {
+  margin-bottom: 8px;
+}
+
+.experience-period {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+.experience-responsibilities {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.responsibility-item {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.responsibility-item:last-child {
+  margin-bottom: 0;
+}
+
 .education-item {
   margin-bottom: 16px;
 }
@@ -676,7 +1271,7 @@ body {
 .education-school,
 .education-period,
 .education-gpa {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
   margin-bottom: 2px;
 }
@@ -691,36 +1286,44 @@ body {
   background-color: #f5f5f5;
   padding: 6px 12px;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
 }
 
 .skills-grid {
-  display: grid;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .skill-category {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 16px;
-  align-items: start;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.skill-category:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .skill-category-title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #1a1a1a;
+  margin: 0 0 6px 0;
 }
 
 .skill-list {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
-  line-height: 1.5;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .document-page {
     padding: 40px 60px;
   }
@@ -750,9 +1353,14 @@ body {
     max-width: 100%;
   }
   
+  .vertical-ruler {
+    display: none;
+  }
+  
   .document-page {
     padding: 30px 40px;
-    margin: 0 10px;
+    margin: 80px 10px 0 60px;
+    max-width: 100%;
   }
   
   .ruler-numbers {
@@ -774,8 +1382,8 @@ body {
   }
   
   .hero-photo {
-    width: 140px;
-    height: 180px;
+    width: 220px; /* Increased proportionally */
+    height: 300px; /* Increased proportionally */
   }
   
   .projects-grid,
@@ -788,10 +1396,20 @@ body {
     text-align: center;
   }
   
-  .profile-photo {
-    flex-direction: column;
+  .about-hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
     text-align: center;
-    gap: 16px;
+  }
+  
+  .about-hero-title {
+    font-size: 28px;
+  }
+  
+  .about-photo-container {
+    width: 240px;
+    height: 180px;
+    margin: 0 auto;
   }
   
   .skill-category {
@@ -799,10 +1417,77 @@ body {
     gap: 8px;
   }
   
+  
   .document-footer {
     flex-direction: column;
     gap: 20px;
     align-items: flex-start;
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .experience-meta {
+    align-items: flex-start;
+  }
+  
+  .timeline-item {
+    padding-left: 50px;
+  }
+  
+  .timeline-marker {
+    left: 6px;
+  }
+  
+  .timeline::before {
+    left: 15px;
+  }
+  
+  .hero-main {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+  
+  .hero-image {
+    order: -1;
+  }
+  
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .hero-description {
+    font-size: 14px;
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .experience-meta {
+    align-items: flex-start;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .education-meta {
+    align-items: flex-start;
+    text-align: left;
   }
 }
 
