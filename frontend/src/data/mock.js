@@ -7,11 +7,57 @@ export const mockData = {
     phone: "+1 540-934-8370",
     linkedin: "https://www.linkedin.com/in/atharva-salunke/",
     github: "https://github.com/atharvasalunke",
-    photo: "https://customer-assets.emergentagent.com/job_msfolio/artifacts/gp5qnnji_WhatsApp%20Image%202025-04-13%20at%2013.54.48.jpeg",
+    photo: "/home.jpeg",
     heroTitle: "Hey there! I'm Atharva and I'm a Data and ML Engineer from Virginia.",
     heroDescription: "With experience spanning machine learning, data engineering, and full-stack development, I specialize in building scalable AI solutions and robust data pipelines that drive business value.",
-    aboutDescription: "I'm a passionate Data and ML Engineer currently pursuing my Master's in Computer Engineering at Virginia Tech. With a strong background in machine learning, data engineering, and cloud platforms, I love solving complex problems and building systems that make a real impact. My experience spans from optimizing LLM-based systems at Zof AI to designing real-time ETL pipelines at Citibank through LTIMindtree."
+    aboutDescription: "I'm a passionate Data and ML Engineer and proud Virginia Tech Hokie currently pursuing my Master's in Computer Engineering at Virginia Tech. With a strong background in machine learning, data engineering, and cloud platforms, I love solving complex problems and building systems that make a real impact. My experience spans from optimizing LLM-based systems at Zof AI to designing real-time ETL pipelines at Citibank through LTIMindtree."
   },
+  workExperience: [
+    {
+      company: "Zof AI Inc.",
+      position: "Machine Learning Intern",
+      location: "San Francisco, CA",
+      period: "June 2025 - Aug 2025",
+      responsibilities: [
+        "Engineered FastAPI microservice reducing LLM test generation latency by 60%",
+        "Automated 80% of compliance workflows using multi-agent orchestration",
+        "Built secure CI/CD pipeline improving deployment efficiency by 40%"
+      ]
+    },
+    {
+      company: "Virginia Tech",
+      position: "Graduate Research Assistant",
+      location: "Blacksburg, VA",
+      period: "Aug 2024 - May 2025",
+      responsibilities: [
+        "Developed cloud-native yield forecasting platform using time series analysis",
+        "Integrated LLaMA 3 chatbot reducing manual triage time by 70%",
+        "Collaborated across Engineering, Agriculture, and Product teams"
+      ]
+    },
+    {
+      company: "LTIMindtree (Citibank)",
+      position: "Data Engineer II",
+      location: "Mumbai, India",
+      period: "Oct 2021 - Jul 2024",
+      responsibilities: [
+        "Built real-time ETL pipelines processing millions of transactions daily for fraud detection",
+        "Improved pipeline efficiency by 40% and reduced incident resolution time by 50%",
+        "Led cross-team root cause analysis and implemented preventive measures"
+      ]
+    },
+    {
+      company: "LTIMindtree (Citibank)",
+      position: "Software Development Engineer",
+      location: "Mumbai, India",
+      period: "Jun 2021 - Oct 2021",
+      responsibilities: [
+        "Scaled data warehouse capacity by 10x using Apache Spark + Kafka",
+        "Reduced reconciliation report runtime from 2 hours to 10 minutes",
+        "Automated batch workflows enhancing compliance reporting speed"
+      ]
+    }
+  ],
   
   projects: [
     {

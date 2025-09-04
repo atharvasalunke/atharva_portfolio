@@ -1,16 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { mockData } from "../data/mock";
-import { Linkedin, Github, Mail, ExternalLink } from "lucide-react";
+import { Linkedin, Github, Mail, ExternalLink, Calendar, MapPin, Building, Minus, Square, X } from "lucide-react";
 
 const Portfolio = () => {
+  const [emailCopied, setEmailCopied] = useState(false);
+  const [emailHovered, setEmailHovered] = useState(false);
+
+  const copyEmailToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(mockData.personal.email);
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy email: ', err);
+    }
+  };
+
+  const getEmailButtonText = () => {
+    if (emailCopied) return 'Copied!';
+    if (emailHovered) return 'Click to copy';
+    return mockData.personal.email;
+  };
   return (
     <div className="portfolio-container">
-      {/* Document ruler/numbering */}
+      {/* Window Controls */}
+      <div className="window-controls">
+        <div className="window-control">
+          <Minus size={8} color="#6c757d" />
+        </div>
+        <div className="window-control">
+          <Square size={8} color="#6c757d" />
+        </div>
+        <div className="window-control">
+          <X size={8} color="#6c757d" />
+        </div>
+      </div>
+
+      {/* Vertical Ruler */}
+      <div className="vertical-ruler">
+        <div className="vertical-ruler-numbers">
+          {Array.from({ length: 10 }, (_, i) => (
+            <span key={i} className="vertical-ruler-number">{i + 1}</span>
+          ))}
+          {/* Intermediate tick marks */}
+          {Array.from({ length: 9 }, (_, i) => (
+            <span key={`vtick-${i}`} className="vertical-intermediate-tick" style={{ top: `${5 + i * 10}%` }}></span>
+          ))}
+        </div>
+      </div>
+
+      {/* Horizontal Ruler */}
       <div className="document-ruler">
         <div className="ruler-numbers">
-          {Array.from({ length: 25 }, (_, i) => (
+          {Array.from({ length: 20 }, (_, i) => (
             <span key={i} className="ruler-number">{i + 1}</span>
+          ))}
+          {/* Intermediate tick marks */}
+          {Array.from({ length: 19 }, (_, i) => (
+            <span key={`tick-${i}`} className="intermediate-tick" style={{ left: `${2.5 + i * 5}%` }}></span>
           ))}
         </div>
       </div>
@@ -25,34 +73,52 @@ const Portfolio = () => {
           <nav className="header-nav">
             <Link to="/projects" className="nav-link">Projects</Link>
             <Link to="/about" className="nav-link">About me</Link>
-            <a href={`mailto:${mockData.personal.email}`} className="nav-link email-link">
-              {mockData.personal.email}
-            </a>
+            <button 
+              onClick={copyEmailToClipboard} 
+              onMouseEnter={() => setEmailHovered(true)}
+              onMouseLeave={() => setEmailHovered(false)}
+              className="nav-link email-link copy-email-btn"
+              title="Click to copy email"
+            >
+              {getEmailButtonText()}
+            </button>
           </nav>
         </header>
 
         {/* Hero Section */}
         <section className="hero-section">
-          <div className="hero-content">
-            <h2 className="hero-title">{mockData.personal.heroTitle}</h2>
-            <p className="hero-description">{mockData.personal.heroDescription}</p>
-            
-            <div className="social-links">
-              <span className="connect-text">Connect with me here:</span>
-              <div className="social-icons">
-                <a href={mockData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon">
-                  <Linkedin size={20} />
-                </a>
-                <a href={mockData.personal.github} target="_blank" rel="noopener noreferrer" className="social-icon">
-                  <Github size={20} />
-                </a>
-                <a href={`mailto:${mockData.personal.email}`} className="social-icon">
-                  <Mail size={20} />
-                </a>
+          <div className="hero-main">
+            <div className="hero-content">
+              <h2 className="hero-title">{mockData.personal.heroTitle}</h2>
+              <p className="hero-description">{mockData.personal.heroDescription}</p>
+              
+              <div className="social-links">
+                <span className="connect-text">Connect with me here:</span>
+                <div className="social-icons">
+                  <a href={mockData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <Linkedin size={20} />
+                  </a>
+                  <a href={mockData.personal.github} target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <Github size={20} />
+                  </a>
+                  <a href={`mailto:${mockData.personal.email}`} className="social-icon">
+                    <Mail size={20} />
+                  </a>
+                </div>
               </div>
+            </div>
+            
+            <div className="hero-image">
+              <img 
+                src={mockData.personal.photo} 
+                alt={mockData.personal.name}
+                className="hero-photo"
+              />
             </div>
           </div>
         </section>
+
+
 
         {/* Featured Work */}
         <section className="featured-work">
@@ -87,7 +153,7 @@ const Portfolio = () => {
         <section className="services-section">
           <h3 className="section-title">Services I offer</h3>
           
-          <div className="services-grid">
+          <div className="services-list">
             {mockData.services.map((service, index) => (
               <div key={index} className="service-item">
                 <h4 className="service-title">{service.title}</h4>
