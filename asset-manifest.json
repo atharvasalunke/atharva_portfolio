@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/atharva_portfolio/static/css/main.0aaee46d.css",
-    "main.js": "/atharva_portfolio/static/js/main.930f158f.js",
+    "main.js": "/atharva_portfolio/static/js/main.f162272b.js",
     "index.html": "/atharva_portfolio/index.html",
     "main.0aaee46d.css.map": "/atharva_portfolio/static/css/main.0aaee46d.css.map",
-    "main.930f158f.js.map": "/atharva_portfolio/static/js/main.930f158f.js.map"
+    "main.f162272b.js.map": "/atharva_portfolio/static/js/main.f162272b.js.map"
   },
   "entrypoints": [
     "static/css/main.0aaee46d.css",
-    "static/js/main.930f158f.js"
+    "static/js/main.f162272b.js"
   ]
 }
