@@ -7,7 +7,7 @@ export const mockData = {
     phone: "+1 540-934-8370",
     linkedin: "https://www.linkedin.com/in/atharva-salunke/",
     github: "https://github.com/atharvasalunke",
-    photo: "/home.jpeg",
+    photo: "home.jpeg",
     heroTitle: "Hey there! I'm Atharva and I'm a Data and ML Engineer from Virginia.",
     heroDescription: "With experience spanning machine learning, data engineering, and full-stack development, I specialize in building scalable AI solutions and robust data pipelines that drive business value.",
     aboutDescription: "I'm a passionate Data and ML Engineer and proud Virginia Tech Hokie currently pursuing my Master's in Computer Engineering at Virginia Tech. With a strong background in machine learning, data engineering, and cloud platforms, I love solving complex problems and building systems that make a real impact. My experience spans from optimizing LLM-based systems at Zof AI to designing real-time ETL pipelines at Citibank through LTIMindtree."

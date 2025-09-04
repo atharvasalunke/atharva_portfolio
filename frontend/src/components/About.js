@@ -90,7 +90,7 @@ const About = () => {
                 <div className="about-intro-image">
                   <div className="about-photo-container">
                     <img 
-                      src="/about_me.jpeg" 
+                      src="about_me.jpeg" 
                       alt={mockData.personal.name}
                       className="about-hero-photo"
                     />
